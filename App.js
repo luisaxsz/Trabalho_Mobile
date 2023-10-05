@@ -17,17 +17,17 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Text>Verifique Sua Média</Text>
-      <TextInput placeholder='Insira sua primeira nota aqui!' style={styles.input} onChangeText={(text) => setNum1(text)}
+      <Text style={styles.text}>Verifique Sua Média</Text>
+      <TextInput placeholder='1° nota' style={styles.input} onChangeText={(text) => setNum1(text)}
         value={num1}  keyboardType="numeric"></TextInput>
-      <TextInput placeholder='Insira sua segunda nota aqui!' style={styles.input} onChangeText={(text) => setNum2(text)}
+      <TextInput placeholder='2° nota' style={styles.input} onChangeText={(text) => setNum2(text)}
         value={num2}  keyboardType="numeric"></TextInput>
-      <TextInput placeholder='Insira sua terceira nota aqui!' style={styles.input}onChangeText={(text) => setNum3(text)}
+      <TextInput placeholder='3° nota' style={styles.input}onChangeText={(text) => setNum3(text)}
         value={num3}  keyboardType="numeric"></TextInput>
-      <TextInput placeholder='Insira sua quarta nota aqui!' style={styles.input}onChangeText={(text) => setNum4(text)}
+      <TextInput placeholder='4° nota' style={styles.input}onChangeText={(text) => setNum4(text)}
         value={num4}  keyboardType="numeric"></TextInput>
-      <button title='submit' onClick={() => calc()}>Submit</button>
-      <Text>{resultado}</Text>
+      <button title='submit' style={styles.button} onClick={() => calc()}>Calcular</button>
+      <Text style={styles.resultado}>{resultado}</Text>
     </View>
   );
 }
@@ -35,13 +35,35 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#48D1CC',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text:{
+    color: 'white',
+    position: 'relative',
+    top:-30,
+    fontSize: 18,
+  },
   input:{
-    backgroundColor: 'red',
+    backgroundColor: '#fff',
     marginBottom: 10,
+    borderRadius: 2,
+    textAlign: 'center'
+  },
+  button:{
+    backgroundColor: '#5F9EA0',
+    border:'none',
+    position: 'relative',
+    top: 10,
+    borderRadius: 2,
+    width: 80,
+    height:20,
+    color: 'white',
+  },
+  resultado:{
+    position: 'relative',
+    top:15,
+    color:'white',
   }
-
 });
